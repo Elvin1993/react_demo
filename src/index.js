@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import _ from 'lodash'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 import './index.css';
 import App from './App';
@@ -28,7 +29,8 @@ function redux(state, action) {
             return state
     }
 }
-let store = createStore(redux)
+// devToolsEnhancer 启用redux-dev-tools
+let store = createStore(redux, devToolsEnhancer())
 
 
 ReactDOM.render( <Provider store={store} ><App / ></Provider> , document.getElementById('root'));

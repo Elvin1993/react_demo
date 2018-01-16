@@ -42,6 +42,7 @@ const mapDispatchToProps = dispatch => {
     },
     handlerRemove: (index)=> {
       dispatch({type: 'REMOVETODO', payload: {index}})
+      dispatch({type: 'DECREMENT'})
     }
   }
 }
